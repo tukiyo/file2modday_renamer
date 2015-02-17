@@ -19,11 +19,11 @@ do
   YMD=$(stat -c %y $i | cut -f 1 -d " ")
   if [ $# -eq 2 ];then
     if [ $2 = "--noop" ];then
-      echo mv $i ${BASENAME}.${YMD}
+      echo mv $i ${BASENAME}.${YMD}.gz
     else
       error
     fi
   else
-    mv $i ${BASENAME}.${YMD}
+    mv $i ${BASENAME}.${YMD}.gz
   fi
 done
